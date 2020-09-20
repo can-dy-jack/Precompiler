@@ -1,0 +1,27 @@
+/*variables */
+/*variables can also be used in other places as well*/
+@link-color :#428bca;         //value
+@link-color-hover: darken(@link-color,10%);
+@test :div-1;                   //selectors
+@test_1 : div-1-text;
+@test_2 : div-2-img;
+@img:"../../img";                //urls
+                        //import   例子： @import "@{}/inde.css" ;
+*{
+    margin: 0;padding: 0;
+}
+.@{test}{
+    height: 100px;margin: auto;width: 30%;
+    background-color: @link-color;
+    text-align: center;
+    .@{test_1}{
+        padding: 30px;line-height: 40px;font-size: larger;
+    }
+    &:hover{
+        background-color: @link-color-hover;
+        color: white;
+        cursor: pointer;
+    }
+}
+@import "advanced2.less";
+/*variables*/
