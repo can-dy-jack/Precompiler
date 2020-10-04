@@ -1,12 +1,13 @@
 /*variables */
 /*variables can also be used in other places as well*/
-@link-color :#428bca;         //value
+@link-color :#428bca;     //value
 @link-color-hover: darken(@link-color,10%);
-@test :div-1;                   //selectors
+@test :div-1;               //selectors
 @test_1 : div-1-text;
 @test_2 : div-2-img;
-@img:"../../img";                //urls
-                        //import   例子： @import "@{}/inde.css" ;
+@img:"../../img";           //urls
+                            //import  例子：@import "@{}/inde.css";实质上就是URL的一种。
+@co : color;                //属性名
 *{
     margin: 0;padding: 0;
 }
@@ -18,10 +19,16 @@
         padding: 30px;line-height: 40px;font-size: larger;
     }
     &:hover{
-        background-color: @link-color-hover;
-        color: white;
+        background-@{co}: @link-color-hover;
+        @{co}: white;
         cursor: pointer;
     }
 }
-@import "advanced2.less";
+@import "advanced-img.less";
+//注：除了value其它变量引用时均需要加上大括号{}！
+//more:
+    //In Less, you can define a variable's name using another variable.
+    //Less variables behave very much like CSS's
+        //
+        //
 /*variables*/

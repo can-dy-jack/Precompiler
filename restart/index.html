@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>元素拖放</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <script>
+        windows.onload=function(){
+            var oImg = document.getElementsByTagName("img")[0];
+            var X,Y;
+            oImg.ondragstart=function(e){
+                X = e.X;
+                Y = e.Y;
+            };
+            oImg.onload=function(){
+                if(e.oX==0&&e.oY==0){
+                    return;
+                }
+                oImg.style.left = (e.oX-e.X)+"px";
+                oImg.style.right = (e.oY-e.Y)+"px";
+            }
+        }
+    </script>
+    <img src="../img/sass.jpg" alt="" draggable="true">
+</body>
+</html>
